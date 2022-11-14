@@ -1,5 +1,4 @@
 h1 = document.querySelector('h1');
-console.log(secretNumber);
 function validateValue(value) {
     const number = +value;
 
