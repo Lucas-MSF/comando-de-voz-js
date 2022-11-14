@@ -5,6 +5,11 @@ button.addEventListener('click', function () {
     button.classList.add('click');
     button.innerHTML = 'ouvindo... <i class="fa-solid fa-microphone-lines ">'
     recognition.start();
+    setTimeout(function () {
+        recognition.stop();
+        button.classList.remove('click');
+        button.innerHTML = 'Falar Valor <i class="fa-solid fa-microphone-lines ">';
+    }, 5000)
 })
 
 const recognition = new SpeechRecognition();
@@ -15,7 +20,7 @@ recognition.addEventListener('result', onSpeak);
 
 function onSpeak(e) {
     button.classList.remove('click');
-    button.innerHTML = 'Falar Valor <i class="fa-solid fa-microphone-lines ">'
+    button.innerHTML = 'Falar Valor <i class="fa-solid fa-microphone-lines ">';
     speakText = e.results[0][0].transcript;
     writeOnScreen(validateValue(speakText));
 
