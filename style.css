@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@300&display=swap');
+
+:root {
+    --font-family: 'Sono', sans-serif;
+    --bg-color: #1CD6CE ;
+    --primary-color: #293462;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    font-family: var(--font-family);
+    
+}
+
+h1 {
+    font-size: 5em;
+}
+h3 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+button {
+    background-color: var(--primary-color);
+    font-family: var(--font-family);
+    color: #FFFFFF;
+    border:  var(--bg-color) solid 1px;
+    padding: 20px;
+    margin: 20px;
+}
+
+
+/* pulse */
+
+@-webkit-keyframes ef-pulse-grow {
+    to {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+  @keyframes ef-pulse-grow {
+    to {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+  .ef-pulse-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+  }
+  .ef-pulse-grow:hover, .ef-pulse-grow:focus, .ef-pulse-grow:active {
+    -webkit-animation-name: ef-pulse-grow;
+    animation-name: ef-pulse-grow;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+  }
+/* pulse */
+
+.click {
+    animation: ef-pulse-grow 1s linear infinite;
+}
+button:hover{
+    background-color: #2C4F78;
+    color: #FFEDE6;
+}
+.mensagem {
+    font-size: 1.5em;
+    margin-top: 40px;
+}
+.box {
+    border: 2px solid var(--primary-color) ;
+    display: inline-block;
+    font-size: 4em;
+    padding: 10px;
+    margin: 20px;
+}
+.icon{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.invisivel{
+    display: none;
+}
