@@ -1,4 +1,5 @@
 h1 = document.querySelector('h1');
+console.log(secretNumber);
 function validateValue(value) {
     const number = +value;
 
@@ -22,6 +23,7 @@ function validateValue(value) {
             <div>Valor menor, tente um numero maior <i class="fa-solid fa-arrow-up"></i> </div>`;
     }
     if(number == secretNumber){
+        recognition.removeEventListener('end', eventEnd);
         h1.innerHTML = 'PARABENS, VOCÊ ACERTOU O NÚMERO!!!!';
         button.innerHTML = 'Tentar Novamente <i class="fa-solid fa-rotate-right"></i>';
         button.addEventListener('click', function () {

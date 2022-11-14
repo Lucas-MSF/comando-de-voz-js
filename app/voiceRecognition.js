@@ -1,21 +1,18 @@
 SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+const chuteElement = document.getElementById('chute');
+
 button = document.querySelector('.button-start');
 
 button.addEventListener('click', function () {
     button.classList.add('click');
-    button.innerHTML = 'ouvindo... <i class="fa-solid fa-microphone-lines ">'
+    button.innerHTML = 'ouvindo... <i class="fa-solid fa-microphone-lines ">';
     recognition.start();
-    setTimeout(function () {
-        recognition.stop();
-        button.classList.remove('click');
-        button.innerHTML = 'Falar Valor <i class="fa-solid fa-microphone-lines ">';
-    }, 5000)
-})
-
-const recognition = new SpeechRecognition();
-const chuteElement = document.getElementById('chute');
+    
+});
 
 recognition.lang = 'pt-Br';
+recognition.addEventListener('end', eventEnd);
 recognition.addEventListener('result', onSpeak);
 
 function onSpeak(e) {
@@ -31,3 +28,9 @@ function writeOnScreen(text) {
     chuteElement.innerHTML = text;
 
 }
+
+function eventEnd() {
+    button.classList.remove('click');
+    button.innerHTML = 'Falar Valor <i class="fa-solid fa-microphone-lines ">';
+}
+

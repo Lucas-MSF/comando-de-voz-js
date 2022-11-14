@@ -74,7 +74,6 @@ button {
 
 .click {
     animation: ef-pulse-grow 1s linear infinite;
-    animation-iteration-count: 5;
 }
 button:hover{
     background-color: #2C4F78;
